@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+h2 {
+  color: #fff;
+}
+
+hr {
+  background-color: #fff;
+}
+
+body {
+  background: rgb(26, 48, 89);
+  background: linear-gradient(
+    180deg,
+    rgba(26, 48, 89, 1) 0%,
+    rgba(55, 133, 219, 1) 100%
+  );
+}

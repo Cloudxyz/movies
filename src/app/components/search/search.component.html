@@ -1,0 +1,36 @@
+<h2 class="mb-5">Movies searching for {{ s }}</h2>
+<hr />
+<div class="row row-cols-1 row-cols-md-2">
+  <div class="col-md-6" *ngFor="let movie of movies">
+    <div class="card mb-3">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img
+            src="https://image.tmdb.org/t/p/w220_and_h330_face/{{
+              movie.poster_path
+            }}"
+            class="card-img"
+            alt="{{ movie.title }}"
+          />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{ movie.title }}</h5>
+            <p class="card-text">
+              {{ movie.overview | slice: 0:150 }}
+            </p>
+            <p class="card-text">
+              <small class="text-muted">{{ movie.release_date }}</small>
+            </p>
+            <a
+              [routerLink]="['/movies/detail', movie.id]"
+              routerLinkActive="router-link-active"
+              class="btn btn-info"
+              >View Details</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

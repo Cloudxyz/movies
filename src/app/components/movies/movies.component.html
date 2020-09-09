@@ -1,0 +1,72 @@
+<h2 class="mb-5">Actual Movies in Theaters</h2>
+<hr />
+<div class="row row-cols-1 row-cols-md-2">
+  <div class="col-md-6" *ngFor="let actual of actuals">
+    <div class="card mb-3">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img
+            src="https://image.tmdb.org/t/p/w220_and_h330_face/{{
+              actual.poster_path
+            }}"
+            class="card-img"
+            alt="{{ actual.title }}"
+          />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{ actual.title }}</h5>
+            <p class="card-text">
+              {{ actual.overview | slice: 0:150 }}
+            </p>
+            <p class="card-text">
+              <small class="text-muted">{{ actual.release_date }}</small>
+            </p>
+            <a
+              [routerLink]="['/movies/detail', actual.id]"
+              routerLinkActive="router-link-active"
+              class="btn btn-info"
+              >View Details</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<h2 class="mb-5 mt-3">Popular Movies</h2>
+<hr />
+<div class="row row-cols-1 row-cols-md-2">
+  <div class="col-md-6" *ngFor="let popular of populars">
+    <div class="card mb-3">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img
+            src="https://image.tmdb.org/t/p/w220_and_h330_face/{{
+              popular.poster_path
+            }}"
+            class="card-img"
+            alt="{{ popular.title }}"
+          />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{ popular.title }}</h5>
+            <p class="card-text">
+              {{ popular.overview | slice: 0:150 }}
+            </p>
+            <p class="card-text">
+              <small class="text-muted">{{ popular.release_date }}</small>
+            </p>
+            <a
+              [routerLink]="['/movies/detail', popular.id]"
+              routerLinkActive="router-link-active"
+              class="btn btn-info"
+              >View Details</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
